@@ -1,0 +1,180 @@
+Ans1. #include<stdio.h>
+int lcm(int,int);
+int main()
+{
+    int x,y,l;
+    printf("Enter two numbers :");
+    scanf("%d%d",&x,&y);
+    l=lcm(x,y);
+    printf("LCM is = %d",l);
+}
+int lcm(int a,int b)
+{
+    int l;
+    for(l=1;l<a*b;l++)
+    {
+        if(l%a==0 && l%b==0)
+        break;
+    }
+    return l;
+}
+
+
+Ans2. #include<stdio.h>
+int hcf(int,int);
+int main()
+{
+    int x,y,h;
+    printf("Enter two numbers :");
+    scanf("%d%d",&x,&y);
+    h=hcf(x,y);
+    printf("HCF is %d",h);
+}
+int hcf(int a,int b)
+{
+    int r,i,s;
+    r=a<b?a:b;
+    for(i=1;i<=r;i++)
+    {
+        if(a%i==0 && b%i==0)
+        s=i;
+    }
+    return s;
+}
+
+
+Ans3.   #include<stdio.h>
+char prime(int);
+int main()
+{
+    int x,p;
+    char s[20];
+    printf("Enter a number :");
+    scanf("%d",&x);
+    p=prime(x);
+    printf("%c",p);
+}
+char prime(int a)
+{
+    int i;
+    for(i=2;i<a;i++)
+    {
+        if(a%i==0)
+        {
+            return printf("\nNumber is not Prime");
+        }
+        else
+        {
+            return printf("\nNumber is Prime");
+        }
+    }
+}
+
+Ans4.  #include<stdio.h>
+int prime(int);
+int main()
+{
+    int n,p;
+    printf("Enter the number :");
+    scanf("%d",&n);
+    p=prime(n);
+    printf("\nNext Prime number is %d",p);
+}
+int prime(int x)
+{
+    int i,j;
+    for(i=x+1;i<=100;i++)
+    {
+        for(j=2;j<i;j++)
+        {
+            if(i%j==0)
+                break;
+        }
+        if(i==j)
+            return i;
+    }
+}
+
+
+Ans6.  #include<stdio.h>
+int prime(int,int);
+int main()
+{
+    int n,p,m;
+    printf("Enter lower number :");
+    scanf("%d",&m);
+    printf("Enter upper number :");
+    scanf("%d",&n);
+    p=prime(m,n);
+}
+int prime(int x,int y)
+{
+    int i,j;
+    for(i=x;i<=y;i++)
+    {
+        for(j=2;j<i;j++)
+        {
+            if(i%j==0)
+                break;
+        }
+        if(i==j)
+          printf("%d\n",i);
+    }
+}
+
+
+Ans7.  #include<stdio.h>
+void fibonacci(int);
+int main()
+{
+    int n;
+    printf("Enter the value of N:");
+    scanf("%d",&n);
+    fibonacci(n);
+}
+void fibonacci(int x)
+{
+    int a=0,b=1,c,i;
+    c=a+b;
+    printf("%d\n",a);
+    printf("%d\n",b);
+    printf("%d\n",c);
+
+    for(i=4;i<=x;i++)
+    {
+        a=b;
+        b=c;
+        c=a+b;
+        printf("%d\n",c);
+    }
+}
+
+
+Ans9.  #include<stdio.h>
+void square(int);
+int main()
+{
+    int n;
+    printf("Enter the value of N:");
+    scanf("%d",&n);
+    square(n);
+}
+void square(int x)
+{
+    printf("Square of %d is %d",x,x*x);
+}
+
+Ans10. #include<stdio.h>
+void square(int);
+int main()
+{
+    float n;
+    n=series();
+    printf("Sum of series is %f",n);
+}
+int series()
+{
+    float x;
+    x=((1*1/1.0)+(2*1/2.0)+(3*2*1/3.0)+(4*3*2*1/4.0)+(5*4*3*2*1/5.0));
+    return x;
+}
